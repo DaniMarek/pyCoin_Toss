@@ -1,27 +1,29 @@
-import random
-import math
+from random import randint
+# import math
 
-random_num=random.random()
+# random_num=random.random()
 # random_num=random.randint(0,1)
 
-
-heads = 0
-tails = 0
-def tossIt(int):
+def tossIt():
+	heads = 0
+	tails = 0
 	print 'Starting the program...'
 	for i in range(1,5001):
-		random_num=random.randint(0,1)
-		if random_num==0:
-			global tails
-			tails=tails+1
+		z=randint(0,1)
+		if z < 0.5:
+			y_rounded=round(z)
+			z = 0
+			# global tails
+			tails+=1
 			print "Attempt #",i,": Throwing a coin... It's a tail! ... Got", heads, "head(s) so far and", tails, "tail(s) so far"
 		else:
-			global heads
-			heads=heads+1
+			# global heads
+			heads+=1
 			print "Attempt #", i,": Throwing a coin... It's a head! ... Got", heads, "head(s) so far and", tails, "tail(s) so far"
 	
+	print "Ending the program, thank you!"
 
-tossIt(int)
+tossIt()
 
 '''
 Write a function that simulates tossing a coin 5,000 times. Your function should print how many times the head/tail appears.
